@@ -1,0 +1,111 @@
+.specials {
+  text-align: center;
+  padding: 50px 20px;
+  background-image: url("../assets/Lemons.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 642px;
+}
+
+.specials-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Markazi", serif;
+  font-size: 64pt;
+  text-align: left;
+}
+
+.specials-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.special-card {
+  background: #edefee;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.special-card:hover {
+  transform: scale(1.05);
+}
+
+.special-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.special-content {
+  padding: 15px;
+  text-align: left;
+}
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10%;
+}
+
+.special-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.special-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.special-price {
+  font-size: 1rem;
+  color: #ee9972;
+  font-weight: bold;
+}
+
+.special-description {
+  font-size: 0.9rem;
+  color: #495e57;
+  margin: 10px 0;
+}
+
+.order-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.order-btn span {
+  margin-left: 5px;
+}
+
+.main-order-btn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-family: "Karla", serif;
+  font-size: 18pt;
+  border: none;
+  background-color: #f4ce14;
+  color: black;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.main-order-btn:hover {
+  background-color: #ee9972;
+}
