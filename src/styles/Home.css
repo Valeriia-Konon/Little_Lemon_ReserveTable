@@ -1,6 +1,5 @@
 .hero {
-  height: 548px;
-  width: 100%;
+  min-height: 548px;
   display: flex;
   background: url('../assets/nnnoise-4.svg');
 }
