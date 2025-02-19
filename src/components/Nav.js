@@ -1,14 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import Logo from "../assets/Logo.png";
 import "../styles/Nav.css";
 
 function Nav() {
+  const [isOpen, setIsOpen] = useState(false); 
   return (
     <nav className="navbar">
       <div className="logo">
         <img src={Logo} alt="Little Lemon Logo" />
       </div>
-      <div className="links">
+      <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+        ☰
+      </button>
+      <div className={`links ${isOpen ? "open" : ""}`}>
         <ul>
           <li>
           <a href="/#home" className="nav-link">Home</a>
