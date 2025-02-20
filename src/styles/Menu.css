@@ -6,6 +6,7 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 642px;
+  width: 100%;
 }
 
 .specials-title {
@@ -104,8 +105,65 @@
   border-radius: 16px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  white-space: nowrap;
 }
 
 .main-order-btn:hover {
   background-color: #ee9972;
+}
+@media (max-width: 768px) {
+  .specials-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .specials-title {
+    font-size: 1rem;
+  }
+
+  .specials-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .special-card {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .main-order-btn {
+    font-size: 16pt;
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specials-title {
+    font-size: 1.5rem;
+  }
+
+  .special-card {
+    width: 100%;
+  }
+
+  .special-name {
+    font-size: 1rem;
+  }
+
+  .special-price {
+    font-size: 0.9rem;
+  }
+
+  .order-btn {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 1000px) {
+  .specials-title {
+    font-size: 3rem;
+  }
+  .main-order-btn {
+    font-size: 14pt;
+  }
 }
