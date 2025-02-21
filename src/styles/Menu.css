@@ -56,12 +56,6 @@
   padding: 0 10%;
 }
 
-.special-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .special-name {
   font-size: 1.2rem;
   font-weight: bold;
