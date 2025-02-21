@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
-import Login from "./components/Login";
 import Testimonials from "./components/Testimonials";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
       <Testimonials />
       <About />
       <Footer />
-      <Login />
     </div>
   );
 }

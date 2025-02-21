@@ -31,7 +31,7 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="login">
+              <a href="/#home">
                 Login
               </a>
             </li>

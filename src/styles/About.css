@@ -50,7 +50,6 @@
 
 .text {
   max-width: 600px;
-  text-align: right;
 }
 
 .text h1 {
@@ -74,7 +73,8 @@
   margin-bottom: 15px;
   font-family: "Karla", serif;
 }
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) {
   .content {
     flex-direction: column;
     text-align: center;
@@ -83,29 +83,31 @@
 
   .images {
     width: 100%;
-    max-width: 300px;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
   }
-  .images img {
-    left: 0;
-  }
+
   .bottom-image,
   .top-image {
-    width: 200px;
-    height: 260px;
-  }
-
-  .bottom-image {
-    bottom: 10px;
-  }
-
-  .top-image {
-    top: 10px;
+    position: static;
+    transform: none;
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+    margin: 10px 0;
   }
 
   .text {
-    max-width: 50%;
-    right: 0;
+    max-width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .little-lemon-section {
+    padding: 30px;
   }
 
   .text h1 {
@@ -118,5 +120,26 @@
 
   .text p {
     font-size: 14px;
+    text-align: center;
+  }
+
+  .bottom-image,
+  .top-image {
+    width: 90%;
+    max-width: 250px;
+  }
+}
+@media (max-width: 1350px) {
+  .images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-left: 30px;
+  }
+  .content {
+    width: 80%;
+  
   }
 }
