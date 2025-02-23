@@ -1,30 +1,29 @@
 import React from "react";
 import "../styles/Home.css";
-import LandingPage from "../assets/LandingPage.jpg";
+import Hero from "./Hero";
+import Menu from "./Menu";
+import Testimonials from "./Testimonials";
+import About from "./About";
 
-function Home() {
-  const handleReservation = () => {
-    alert("Table Reserved!");
-  };
-
+const Home = () => {
   return (
-    <section className="hero" id="home">
-      <div className="welcoming-text">
-        <h1>Little Lemon</h1>
-        <h3>Chicago</h3>
-        <p>
-          We are a family owned Mediterranean restaurant, focused on traditional
-          recipes served with a modern twist.
-        </p>
-        <button onClick={handleReservation}>Reserve a Table</button>
-      </div>
-      <div className="welcoming-picture">
-        <img
-          src={LandingPage}
-          alt="Representing Little Lemon best seller - bruschetta"
-        />
-      </div>
-    </section>
+    <div>
+      <section id="hero">
+        <Hero />
+      </section>
+
+      <section id="menu">
+        <Menu />
+      </section>
+
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+    </div>
   );
 }
 

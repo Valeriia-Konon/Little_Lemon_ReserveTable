@@ -7,46 +7,35 @@ import {
 } from "react-icons/ai";
 import "../styles/Footer.css";
 import LogoFooter from "../assets/LogoFooter.png";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <img src={LogoFooter} alt ="Little Lemon Logo" />
+          <img src={LogoFooter} alt="Little Lemon Logo" />
         </div>
         <div className="footer-section">
-          <h3 className="footer-heading">
-            Little Lemon
-          </h3>
+          <h3 className="footer-heading">Little Lemon</h3>
           <ul className="footer-links">
             <li>
-              <a href="/#menu">
-                Menu
-              </a>
+              <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
             </li>
             <li>
-              <a href="/#about">
-                About Us
-              </a>
+              <Link to='/about' onClick={() => window.scrollTo(0, 0)}>About Us</Link>
             </li>
             <li>
-              <a href="/#home">
-                Login
-              </a>
+              <Link to='/login' onClick={() => window.scrollTo(0, 0)}>Login</Link>
             </li>
             <li>
-              <a href="/#menu">
-                Reservations
-              </a>
+              <Link to='/bookingform' onClick={() => window.scrollTo(0, 0)}>Reservations</Link>
             </li>
           </ul>
         </div>
         <div className="footer-section">
           <h3 className="footer-heading">Contact Us:</h3>
-          <p>
-            648 Little Lemon Street Chicago, IL, United States
-          </p>
+          <p>648 Little Lemon Street Chicago, IL, United States</p>
           <p>+1 123-456-7890</p>
           <address>little.lemon@restaurant.com</address>
           <div className="footer-socials">
