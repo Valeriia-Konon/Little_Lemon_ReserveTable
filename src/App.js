@@ -8,7 +8,7 @@ import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import Hero from "./components/Hero";
-import BookingForm from "./components/BookingForm";
+import BookingPage from "./components/BookingPage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<About />} />
-        <Route path="/bookingform" element={<BookingForm />} />
+        <Route path="/bookingform" element={<BookingPage />} />
       </Routes>
       <Footer />
     </div>

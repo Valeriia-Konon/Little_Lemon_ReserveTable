@@ -1,32 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
+import "../styles/BookingForm.css";
 
-function BookingForm() {
+function BookingForm({availableTimes, dispatch}) {
+  const [formData, setFormData] = useState({
+    date: "",
+    time: "",
+    guests: "",
+    occasion: "Birthday",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted successfully", formData);
+    setFormData({
+      date: "",
+      time: "",
+      guests: "1",
+      occasion: "Birthday",
+    });
+  };
+
   return (
-    <section>
-      <h1>Reservations</h1>
-      <p>Book your table in advance to enjoy a perfect dining experience.</p>
-      <form>
-        <div id="booking">
-          <input type="date" id="date" name="date"></input>
-        </div>
-        <div>
-          <input type="time" id="time" name="time"></input>
-        </div>
-        <div>
-          <input
-            type="number"
-            id="number_of_guests"
-            name="number_of_guests"
-          ></input>
-        </div>
-        <div>
-          <input type="text" id="occassion" name="occassion"></input>
-        </div>
-        <div>
-          <input type="button"></input>
-        </div>
-      </form>
-    </section>
+    <form className="booking-container" onSubmit={handleSubmit}>
+      <div className="date-selector">
+        <label htmlFor="res-date">Choose date</label>
+        <input
+          type="date"
+          id="res-date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="time-selector">
+        <label htmlFor="res-time">Choose time</label>
+        <select
+          id="res-time"
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Select a time</option>
+          {availableTimes.map((slot) => (
+            <option key={slot} value={slot}>
+              {slot}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="guest-selector">
+        <label htmlFor="guests">Number of guests</label>
+        <input
+          type="number"
+          placeholder={1}
+          min={1}
+          max={10}
+          id="guests"
+          name="guests"
+          value={formData.guests}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="occassion-selector">
+        <label htmlFor="occasion">Occasion</label>
+        <select
+          id="occasion"
+          name="occassion"
+          value={formData.occasion}
+          onChange={handleChange}
+          required
+        >
+          <option>Birthday</option>
+          <option>Anniversary</option>
+        </select>
+      </div>
+      <div className="btn-submit">
+        <input type="submit" disabled={!formData.date || !formData.time || !formData.guests} defaultValue="Make Your reservation" />
+      </div>
+    </form>
   );
 }
 

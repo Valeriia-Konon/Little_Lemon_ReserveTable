@@ -1,6 +1,7 @@
 import React from 'react';
 import "../styles/Hero.css";
 import LandingPage from "../assets/LandingPage.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
     return (
@@ -13,7 +14,7 @@ const Hero = () => {
                         We are a family owned Mediterranean restaurant, focused on traditional
                         recipes served with a modern twist.
                     </p>
-                    <button >Reserve a Table</button>
+                    <Link to="/bookingform"><button >Reserve a Table</button></Link>
                 </div>
                 <div className="welcoming-picture">
                     <img

@@ -1,0 +1,5 @@
+.booking-container {
+    display: "grid";
+    max-width: 200; 
+    gap: 20;
+}
