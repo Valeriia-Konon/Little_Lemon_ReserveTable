@@ -4,7 +4,7 @@ import "../styles/Nav.css";
 import { Link } from "react-router-dom";
 
 function Nav() {
-  const [isOpen, setIsOpen] = useState("home");
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleLogin = () => {
     alert("Login is unavailable. We apologize for the inconvenience.");
@@ -17,7 +17,7 @@ function Nav() {
       <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
         ☰
       </button>
-      <div>
+      <div className={`links ${isOpen ? "open" : ""}`}>
         <ul>
           <li>
             {" "}

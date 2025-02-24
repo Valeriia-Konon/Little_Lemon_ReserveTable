@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/BookingForm.css";
 
-function BookingForm({availableTimes, dispatch}) {
+function BookingForm({ availableTimes, dispatch }) {
   const [formData, setFormData] = useState({
     date: "",
     time: "",
@@ -86,7 +86,12 @@ function BookingForm({availableTimes, dispatch}) {
         </select>
       </div>
       <div className="btn-submit">
-        <input type="submit" disabled={!formData.date || !formData.time || !formData.guests} defaultValue="Make Your reservation" />
+        <button
+          type="submit"
+          disabled={!formData.date || !formData.time || !formData.guests}
+        >
+          Make Your reservation
+        </button>
       </div>
     </form>
   );

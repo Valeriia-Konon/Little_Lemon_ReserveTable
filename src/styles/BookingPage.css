@@ -1,0 +1,22 @@
+.booking-form-container {
+  width: auto;
+  min-height: 642px;
+}
+.booking-title {
+  font-family: "Markazi", serif;
+  font-size: 2.5rem;
+  margin: 6vh;
+  padding-top: 10px;
+}
+.booking-title,
+.booking-text {
+  text-align: center;
+}
+.booking-text {
+  font-family: "Karla", serif;
+  margin-bottom: 8vh;
+}
+.booking-form {
+  display: flex;
+  justify-content: center;
+}

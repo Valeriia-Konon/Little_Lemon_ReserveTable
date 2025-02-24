@@ -17,7 +17,7 @@
 .navbar .links {
   display: flex;
   flex-direction: row;
-  margin-right: 120px;
+  margin-right: 1rem;
 }
 
 .navbar ul {
