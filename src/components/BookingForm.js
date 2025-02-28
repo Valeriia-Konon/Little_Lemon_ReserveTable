@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/BookingForm.css";
 
-function BookingForm({ availableTimes, dispatch }) {
+const BookingForm = (props) => {
   const [formData, setFormData] = useState({
     date: "",
     time: "",
@@ -51,11 +51,10 @@ function BookingForm({ availableTimes, dispatch }) {
           required
         >
           <option value="">Select a time</option>
-          {availableTimes.map((slot) => (
-            <option key={slot} value={slot}>
-              {slot}
-            </option>
-          ))}
+          {props.availableTimes.availableTimes.map((availableTimes) => {
+            return <option key={availableTimes}>{availableTimes}</option>;
+
+          })}
         </select>
       </div>
       <div className="guest-selector">
@@ -88,7 +87,8 @@ function BookingForm({ availableTimes, dispatch }) {
       <div className="btn-submit">
         <button
           type="submit"
-          disabled={!formData.date || !formData.time || !formData.guests}
+          disabled={!formData.date || !formData.time || !formData.guests} aria-label="On Click"
+
         >
           Make Your reservation
         </button>

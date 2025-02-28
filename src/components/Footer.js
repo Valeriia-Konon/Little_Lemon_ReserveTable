@@ -29,7 +29,7 @@ function Footer() {
               <Link to='/login' onClick={() => window.scrollTo(0, 0)}>Login</Link>
             </li>
             <li>
-              <Link to='/bookingform' onClick={() => window.scrollTo(0, 0)}>Reservations</Link>
+              <Link to='/booking' onClick={() => window.scrollTo(0, 0)}>Reservations</Link>
             </li>
           </ul>
         </div>
