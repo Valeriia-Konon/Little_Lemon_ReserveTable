@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import Hero from "./components/Hero";
 import Main from "./components/Main";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/about" element={<About />} />
         <Route path="/booking" element={<Main />} />
+        <Route path="/bookingconfirmation" element={<ConfirmedBooking />} />
       </Routes>
       <Footer />
     </div>

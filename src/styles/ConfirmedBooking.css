@@ -3,6 +3,33 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  min-height: 70vh;
   text-align: center;
 }
+.confirmation-title {
+    font-family: "Markazi", serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.confirmation-text {
+    font-family: "Karla", serif;
+    font-size: 1rem;
+}
+.btn-submit {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+.btn-submit button {
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    justify-content: center;
+    background-color: #f4ce14;
+    height: 40px;
+    width: 190px;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+  }

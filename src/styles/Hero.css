@@ -1,4 +1,3 @@
-
 .hero {
   min-height: 548px;
   display: flex;
@@ -144,6 +143,6 @@
 }
 @media (min-width: 1024px) {
   .welcoming-picture img {
-    margin-bottom: -50px; /* Adjusts overlap into the next section */
+    margin-bottom: -50px;
   }
 }

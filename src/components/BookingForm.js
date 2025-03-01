@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/BookingForm.css";
+import { Link } from "react-router-dom";
 
 const BookingForm = (props) => {
   const [formData, setFormData] = useState({
@@ -53,7 +54,6 @@ const BookingForm = (props) => {
           <option value="">Select a time</option>
           {props.availableTimes.availableTimes.map((availableTimes) => {
             return <option key={availableTimes}>{availableTimes}</option>;
-
           })}
         </select>
       </div>
@@ -85,16 +85,18 @@ const BookingForm = (props) => {
         </select>
       </div>
       <div className="btn-submit">
-        <button
-          type="submit"
-          disabled={!formData.date || !formData.time || !formData.guests} aria-label="On Click"
-
-        >
-          Make Your reservation
-        </button>
+        <Link to="/bookingconfirmation">
+          <button
+            type="submit"
+            disabled={!formData.date || !formData.time || !formData.guests}
+            aria-label="On Click"
+          >
+            Make Your reservation
+          </button>
+        </Link>
       </div>
     </form>
   );
-}
+};
 
 export default BookingForm;
