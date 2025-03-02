@@ -9,38 +9,41 @@ function Nav() {
   const handleLogin = () => {
     alert("Login is unavailable. We apologize for the inconvenience.");
   };
+
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <nav className="navbar">
       <div className="logo">
         <img src={Logo} alt="Little Lemon Logo" />
       </div>
-      <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+      <button className="menu-toggle" onClick={() => setIsOpen(true)}>
         ☰
       </button>
       <div className={`links ${isOpen ? "open" : ""}`}>
         <ul>
           <li>
             {" "}
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={closeMenu}>Home</Link>
           </li>
           <li>
             {" "}
-            <Link to="/about">About</Link>
+            <Link to="/about" onClick={closeMenu}>About</Link>
           </li>
           <li>
             {" "}
-            <Link to="/menu">Menu</Link>
+            <Link to="/menu" onClick={closeMenu}>Menu</Link>
           </li>
           <li>
             {" "}
-            <Link to="/testimonials">Testimonials</Link>
+            <Link to="/testimonials" onClick={closeMenu}>Testimonials</Link>
           </li>
           <li>
             {" "}
-            <Link to="/menu">Order Online</Link>
+            <Link to="/menu" onClick={closeMenu}>Order Online</Link>
           </li>
           <li>
-            <a href="/" className="nav-link" onClick={handleLogin}>
+            <a href="/" className="nav-link" onClick={(e) => { handleLogin(); closeMenu(); }}>
               Login
             </a>
           </li>
