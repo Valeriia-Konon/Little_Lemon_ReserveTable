@@ -1,5 +1,4 @@
 import React, { useReducer } from "react";
-import { useNavigate } from "react-router-dom";
 import BookingPage from "./BookingPage";
 
 const seedRandom = function (seed) {
@@ -25,7 +24,7 @@ const fetchAPI = function (date) {
   return result;
 };
 
-function initializeTimes() {
+export function initializeTimes() {
   return { availableTimes: fetchAPI(new Date()) };
 }
 
@@ -33,7 +32,7 @@ const submitAPI = function (formData) {
   return true;
 };
 
-function updateTimes(state, action) {
+export function updateTimes(state, action) {
   if (action.type === "UPDATE_TIMES") {
     return { availableTimes: fetchAPI(new Date(action.payload)) };
   }
@@ -43,11 +42,10 @@ function updateTimes(state, action) {
 function Main() {
   const [state, dispatch] = useReducer(updateTimes, {}, initializeTimes);
 
-  const navigate = useNavigate();
 
   function submitForm(formData) {
     if (submitAPI(formData)) {
-      navigate("/bookingconfirmation");
+      window.location.href = "/bookingconfirmation";
     }
   }
 
