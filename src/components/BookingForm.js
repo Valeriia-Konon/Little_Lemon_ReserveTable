@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../styles/BookingForm.css";
-import { Link } from "react-router-dom";
 
-const BookingForm = (props) => {
+const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
   const [formData, setFormData] = useState({
     date: "",
     time: "",
@@ -16,17 +15,19 @@ const BookingForm = (props) => {
       ...prevData,
       [name]: value,
     }));
+    if (name === "date") {
+      dispatch({ type: "UPDATE_TIMES", payload: new Date(value) });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted successfully", formData);
-    setFormData({
-      date: "",
-      time: "",
-      guests: "1",
-      occasion: "Birthday",
-    });
+    submitForm(formData);
+  };
+
+  const confirmation = () => {
+    window.location.href = "/bookingconfirmation";
   };
 
   return (
@@ -52,8 +53,8 @@ const BookingForm = (props) => {
           required
         >
           <option value="">Select a time</option>
-          {props.availableTimes.availableTimes.map((availableTimes) => {
-            return <option key={availableTimes}>{availableTimes}</option>;
+          {availableTimes.map((time) => {
+            return <option key={time}>{time}</option>;
           })}
         </select>
       </div>
@@ -85,15 +86,14 @@ const BookingForm = (props) => {
         </select>
       </div>
       <div className="btn-submit">
-        <Link to="/bookingconfirmation">
-          <button
-            type="submit"
-            disabled={!formData.date || !formData.time || !formData.guests}
-            aria-label="On Click"
-          >
-            Make Your reservation
-          </button>
-        </Link>
+        <button
+          type="submit"
+          disabled={!formData.date || !formData.time || !formData.guests}
+          aria-label="On Click"
+          onClick={confirmation}
+        >
+          Make Your reservation
+        </button>
       </div>
     </form>
   );
