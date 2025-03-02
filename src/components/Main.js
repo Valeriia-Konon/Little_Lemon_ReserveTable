@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import BookingPage from "./BookingPage";
 
 const seedRandom = function (seed) {
@@ -25,16 +25,17 @@ const fetchAPI = function (date) {
 };
 
 export function initializeTimes() {
-  return { availableTimes: fetchAPI(new Date()) };
+  const storedTimes = localStorage.getItem("availableTimes");
+  return storedTimes
+    ? JSON.parse(storedTimes)
+    : { availableTimes: fetchAPI(new Date()) };
 }
-
-const submitAPI = function (formData) {
-  return true;
-};
 
 export function updateTimes(state, action) {
   if (action.type === "UPDATE_TIMES") {
-    return { availableTimes: fetchAPI(new Date(action.payload)) };
+    const newTimes = { availableTimes: fetchAPI(new Date(action.payload)) };
+    localStorage.setItem("availableTimes", JSON.stringify(newTimes));
+    return newTimes;
   }
   return state;
 }
@@ -42,12 +43,14 @@ export function updateTimes(state, action) {
 function Main() {
   const [state, dispatch] = useReducer(updateTimes, {}, initializeTimes);
 
-
   function submitForm(formData) {
-    if (submitAPI(formData)) {
-      window.location.href = "/bookingconfirmation";
-    }
+    localStorage.removeItem("availableTimes");
+    window.location.href = "/bookingconfirmation";
   }
+
+  useEffect(() => {
+    localStorage.setItem("availableTimes", JSON.stringify(state));
+  }, [state]);
 
   return (
     <main>

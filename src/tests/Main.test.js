@@ -1,5 +1,6 @@
 import { initializeTimes, updateTimes } from "../components/Main";
 
+
 describe("Booking Reducer Functions", () => {
   test("initializeTimes should return the initial state with availableTimes as an array", () => {
     const initialState = initializeTimes();
